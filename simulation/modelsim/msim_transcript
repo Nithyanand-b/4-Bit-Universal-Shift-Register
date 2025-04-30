@@ -1,0 +1,58 @@
+# Reading pref.tcl
+# do four_bit_USR_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/nithy/Documents/Verilog\ Projects/four_bit_USR {C:/Users/nithy/Documents/Verilog Projects/four_bit_USR/four_bit_USR.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:00 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/nithy/Documents/Verilog Projects/four_bit_USR" C:/Users/nithy/Documents/Verilog Projects/four_bit_USR/four_bit_USR.v 
+# -- Compiling module four_bit_USR
+# 
+# Top level modules:
+# 	four_bit_USR
+# End time: 21:28:00 on Apr 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vlog -reportprogress 300 -work work {C:/Users/nithy/Documents/Verilog Projects/four_bit_USR/four_bit_USR.v} {C:/Users/nithy/Documents/Verilog Projects/four_bit_USR/tb_four_bit_USR.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:12 on Apr 30,2025
+# vlog -reportprogress 300 -work work C:/Users/nithy/Documents/Verilog Projects/four_bit_USR/four_bit_USR.v C:/Users/nithy/Documents/Verilog Projects/four_bit_USR/tb_four_bit_USR.sv 
+# -- Compiling module four_bit_USR
+# -- Compiling module tb_four_bit_USR
+# 
+# Top level modules:
+# 	tb_four_bit_USR
+# End time: 21:28:12 on Apr 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim rtl_work.tb_four_bit_USR
+# vsim rtl_work.tb_four_bit_USR 
+# Start time: 21:28:22 on Apr 30,2025
+# Loading sv_std.std
+# Loading rtl_work.tb_four_bit_USR
+# Loading rtl_work.four_bit_USR
+add wave -position insertpoint  \
+sim:/tb_four_bit_USR/clk \
+sim:/tb_four_bit_USR/data_in \
+sim:/tb_four_bit_USR/data_out \
+sim:/tb_four_bit_USR/mode \
+sim:/tb_four_bit_USR/rst \
+sim:/tb_four_bit_USR/serial_in
+# Saving layout as "Simulation_Only"
+run -all
+# Starting simulation...
+# ** Note: $finish    : C:/Users/nithy/Documents/Verilog Projects/four_bit_USR/tb_four_bit_USR.sv(61)
+#    Time: 95 ns  Iteration: 0  Instance: /tb_four_bit_USR
+# 1
+# Break in Module tb_four_bit_USR at C:/Users/nithy/Documents/Verilog Projects/four_bit_USR/tb_four_bit_USR.sv line 61
+# image file format "bmp" is unknown
+# image file format "bmp" is unknown
+# End time: 21:31:32 on Apr 30,2025, Elapsed time: 0:03:10
+# Errors: 0, Warnings: 0

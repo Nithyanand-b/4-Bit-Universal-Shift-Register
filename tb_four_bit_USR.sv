@@ -1,0 +1,64 @@
+`timescale 1ns / 1ps
+
+module tb_four_bit_USR;
+
+  reg clk, rst;
+  reg [1:0] mode;
+  reg [3:0] data_in;
+  reg serial_in;
+  wire [3:0] data_out;
+
+  // Instantiate the DUT
+  four_bit_USR uut (
+    .clk(clk),
+    .rst(rst),
+    .mode(mode),
+    .data_in(data_in),
+    .serial_in(serial_in),
+    .data_out(data_out)
+  );
+
+  // Clock Generation
+  always #5 clk = ~clk;  // 10ns period
+
+  // Stimulus Task
+  task apply_input;
+    input [1:0] m;
+    input [3:0] din;
+    input sin;
+    begin
+      mode = m;
+      data_in = din;
+      serial_in = sin;
+      #10;
+    end
+  endtask
+
+  initial begin
+    $display("Starting simulation...");
+    $dumpfile("waveform.vcd");  // For GTKWAVE
+    $dumpvars(0, tb_four_bit_USR);
+
+    clk = 0;
+    rst = 1; mode = 0; data_in = 0; serial_in = 0;
+    #15 rst = 0;
+
+    // Load 4'b1010
+    apply_input(2'b11, 4'b1010, 1'b0);
+
+    // Hold
+    apply_input(2'b00, 0, 0);
+
+    // Shift Right with serial in = 1, then 0
+    apply_input(2'b01, 0, 1);
+    apply_input(2'b01, 0, 0);
+
+    // Shift Left with serial in = 1, then 0
+    apply_input(2'b10, 0, 1);
+    apply_input(2'b10, 0, 0);
+
+    #20;
+    $finish;
+  end
+
+endmodule
