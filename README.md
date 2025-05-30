@@ -1,38 +1,46 @@
-# 4-bit Universal Shift Register (USR)
+# 🔄 4-bit Universal Shift Register (USR)
 
 ## 📌 Description
-This project implements a 4-bit Universal Shift Register in Verilog using Intel Quartus Prime. The register supports:
-- Hold
-- Shift Right
-- Shift Left
-- Parallel Load
+
+This project implements a 4-bit Universal Shift Register (USR) in Verilog using Intel Quartus Prime. The register supports four operations:
+
+- **Hold** (No change)
+- **Shift Right**
+- **Shift Left**
+- **Parallel Load**
+
+## 🖼️ RTL Schematic
+
+> *(Insert screenshot of the RTL view here)*  
+> ![RTL](path/to/rtl_image.png)
+
+---
 
 ## 🔧 Technologies Used
-- Verilog HDL
+
+- Verilog HDL  
 - Intel Quartus Prime Lite Edition
-- FPGA (Cyclone IV, EP4CE10F17C8 used for testing)
 
-## 💡 Mode Table
+## 💡 Mode Control Table
 
-| Mode | Function      |
+| Mode | Operation     |
 |------|---------------|
 | 00   | Hold          |
 | 01   | Shift Right   |
 | 10   | Shift Left    |
 | 11   | Parallel Load |
 
-## 📂 Files
-- `four_bit_USR.v` — Verilog source
-- `four_bit_USR.qsf/qpf` — Quartus project and settings
-- `output_files/*.sof` — Programming file for FPGA
-- `pin_assignments.txt` — Board-specific pin mapping (optional)
+## 📂 Project Files
 
-## 🚀 How to Run
-1. Open `four_bit_USR.qpf` in Quartus Prime
-2. Compile the project
-3. Assign FPGA pins in Pin Planner
-4. Program the board using USB-Blaster
+- `four_bit_USR.v` — Verilog source code  
+- `four_bit_USR.qsf` / `four_bit_USR.qpf` — Quartus project and settings files  
+- `output_files/*.sof` — FPGA programming file  
+- `pin_assignments.txt` — Pin mappings (if using an FPGA board)
 
-## 🖥️ Simulation (Optional)
-Simulate using University Waveform Editor (`.vwf`) in Quartus.
+---
+
+## 👨‍💻 Author
+
+Designed by Nithyanand Boopathi
+📅 Date: April 30 2025
 
