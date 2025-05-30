@@ -11,8 +11,8 @@ This project implements a 4-bit Universal Shift Register (USR) in Verilog using 
 
 ## 🖼️ RTL Schematic
 
-> *(Insert screenshot of the RTL view here)*  
-> ![RTL](path/to/rtl_image.png)
+
+> ![RTL]([path/to/rtl_image.png](https://github.com/Nithyanand-b/4-Bit-Universal-Shift-Register/blob/main/Screenshot%202025-05-30%20212127.png))
 
 ---
 
