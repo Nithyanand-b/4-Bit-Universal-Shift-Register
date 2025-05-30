@@ -3,6 +3,13 @@
 ## 📌 Description
 
 This project implements a 4-bit Universal Shift Register (USR) in Verilog using Intel Quartus Prime. The register supports four operations:
+
+## 🖼️ RTL Schematic
+
+
+> ![RTL](https://github.com/Nithyanand-b/4-Bit-Universal-Shift-Register/blob/main/Screenshot%202025-05-30%20212127.png)
+
+---
 ## 💡 Mode Control Table
 
 | Mode | Operation     |
@@ -11,15 +18,6 @@ This project implements a 4-bit Universal Shift Register (USR) in Verilog using 
 | 01   | Shift Right   |
 | 10   | Shift Left    |
 | 11   | Parallel Load |
-
-
-## 🖼️ RTL Schematic
-
-
-> ![RTL](https://github.com/Nithyanand-b/4-Bit-Universal-Shift-Register/blob/main/Screenshot%202025-05-30%20212127.png)
-
----
-
 ## 🔧 Technologies Used
 
 - Verilog HDL  
